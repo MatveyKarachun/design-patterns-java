@@ -4,5 +4,4 @@ import abstractfactory.furniture.products.Chair;
 
 public interface AbstractFurnitureFactory {
     Chair createChair();
-
 }

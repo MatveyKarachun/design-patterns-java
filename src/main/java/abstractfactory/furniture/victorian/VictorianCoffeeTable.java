@@ -4,7 +4,7 @@ import abstractfactory.furniture.products.CoffeeTable;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class VictorianCoffeeTable implements CoffeeTable {
+class VictorianCoffeeTable implements CoffeeTable {
     @Override
     public void sitDown() {
         log.info("sit down victorian coffee table");
