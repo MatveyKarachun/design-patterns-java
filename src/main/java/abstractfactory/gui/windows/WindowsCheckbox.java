@@ -1,10 +1,10 @@
-package abstractfactory.ui.windows;
+package abstractfactory.gui.windows;
 
-import abstractfactory.ui.elements.Checkbox;
+import abstractfactory.gui.elements.Checkbox;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class WindowsCheckbox implements Checkbox {
+class WindowsCheckbox implements Checkbox {
     @Override
     public void paint() {
         log.info("You have created WindowsCheckbox.");
