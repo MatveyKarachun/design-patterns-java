@@ -1,8 +1,7 @@
 package creational.prototype;
 
-import lombok.EqualsAndHashCode;
+import java.util.Objects;
 
-@EqualsAndHashCode
 abstract class Shape {
     private final int x;
     private final int y;
@@ -18,5 +17,17 @@ abstract class Shape {
         this.color = shapeFrom.color;
     }
 
+    Shape(int x, int y, String color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+    }
+
     public abstract Shape copy();
+
+    @Override
+    public boolean equals(Object object2) {
+        if (!(object2 instanceof Shape shape2)) return false;
+        return shape2.x == x && shape2.y == y && Objects.equals(shape2.color, color);
+    }
 }
