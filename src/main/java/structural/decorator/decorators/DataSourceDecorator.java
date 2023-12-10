@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import structural.decorator.DataSource;
 
 @RequiredArgsConstructor
-class DataSourceDecorator implements DataSource {
+public class DataSourceDecorator implements DataSource {
     private final DataSource wrappee;
 
     @Override

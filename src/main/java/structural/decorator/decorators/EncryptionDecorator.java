@@ -5,7 +5,7 @@ import structural.decorator.DataSource;
 
 import java.util.Base64;
 
-class EncryptionDecorator extends DataSourceDecorator {
+public class EncryptionDecorator extends DataSourceDecorator {
     public EncryptionDecorator(DataSource source) {
         super(source);
     }
