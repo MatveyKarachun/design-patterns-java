@@ -7,7 +7,7 @@ import structural.decorator.decorators.CompressionDecorator;
 import structural.decorator.decorators.DataSourceDecorator;
 import structural.decorator.decorators.EncryptionDecorator;
 
-//TODO doesn't work, fix it
+//TODO move output file to another place?
 @Slf4j
 class DecoratorTest {
     @Test
@@ -15,9 +15,9 @@ class DecoratorTest {
         val salaryRecords = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";
         final DataSourceDecorator encoded = new CompressionDecorator(
             new EncryptionDecorator(
-                new FileDataSource("file.txt")));
+                new FileDataSource("out/OutputDemo.txt")));
         encoded.write(salaryRecords);
-        final DataSource plain = new FileDataSource("file.txt");
+        final DataSource plain = new FileDataSource("out/OutputDemo.txt");
 
         log.info("- Input ----------------");
         log.info(salaryRecords);

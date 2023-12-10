@@ -16,7 +16,7 @@ public class CompressionDecorator extends DataSourceDecorator {
 
     @Getter
     @Setter
-    private int compressionLvl = 6;
+    private int compressionLvl = 2;
 
     public CompressionDecorator(DataSource wrappee) {
         super(wrappee);
@@ -38,7 +38,10 @@ public class CompressionDecorator extends DataSourceDecorator {
              final OutputStream deflaterOutputStream = new DeflaterOutputStream(baos, new Deflater(compressionLvl))
         ) {
             deflaterOutputStream.write(bytes);
-            return Base64.getEncoder().encodeToString(baos.toByteArray());
+            deflaterOutputStream.close();
+            deflaterOutputStream.close();
+            val resultBytes = baos.toByteArray();
+            return Base64.getEncoder().encodeToString(resultBytes);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
